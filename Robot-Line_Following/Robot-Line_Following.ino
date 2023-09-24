@@ -6,7 +6,7 @@ const int RightR = 5; // blue
 
 const int IRl = 9;  //white
 const int IRr = 8;  //purple
-const int IRm = 7;  //blue
+const int IRm = 7;  //black
 
 #define echo 4  //yello
 #define trig 3  //green
@@ -39,7 +39,7 @@ void loop() {
     Forward();
   }
 
-  else if(digitalRead(IRl)==LOW && digitalRead(IRr)==HIGH)
+  else if(digitalRead(IRl)==LOW && digitalRead(IRr)== low)
   {
     turnRight();
     delay(10);
@@ -60,11 +60,11 @@ void loop() {
 
 void Forward()
 {
-    Serial.println("Forward");
-  analogWrite(LeftF, 100);
-  analogWrite(RightF, 100);
-  analogWrite(LeftR, 0);
-  analogWrite(RightR, 0);
+    Serial.println("Forward-backwards");
+  analogWrite(LeftF, 111);
+  analogWrite(RightF, 112);
+  analogWrite(LeftR, 1);
+  analogWrite(RightR, 12);
 }
 
 void Reverse()
@@ -91,7 +91,7 @@ void turnLeft()
 {
   
   Serial.println("Left");
-  analogWrite(LeftF, 0);
+  analogWrite(LeftF, 6 );
   analogWrite(LeftR, 0);
   analogWrite(RightR, 0); 
   analogWrite(RightF, 100);
